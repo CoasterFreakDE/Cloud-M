@@ -1,0 +1,19 @@
+{
+    "tab-imprint": "Imprint",
+    "tab-terms": "Terms",
+    "tab-data-safty": "Data safty",
+    "btn-verify": "Verify this account",
+    "btn-not-you": "Not you? Log into another account.",
+    "btn-close": "Close this window",
+    "btn-login": "Login with discord",
+    "btn-why": "Why should I verify myself?",
+    "txt-verify-guild": "Verify yourself on %guild%",
+    "txt-verified-guild": "Verfied on %guild%",
+    "txt-verify-guild-desc": "Verify yourself on %guild% to get access to the server.",
+    "txt-not-logged-in": "You are not logged in to any account.",
+    "login-wrong-guild": "Unknown guild",
+    "error-too-many-requests": "You have already verified several accounts with this IP today.",
+    "error-vpn": "You are using a vpn connection. Please disable it to verify.",
+    "error-proxy": "You are using a proxy. Please disable it to verify.",
+    "error-tor": "You are using a tor connection. Please disable it to verify."
+}

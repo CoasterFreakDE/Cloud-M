@@ -1,0 +1,19 @@
+{
+    "tab-imprint": "Impressum",
+    "tab-terms": "AGB",
+    "tab-data-safty": "Datenschutz",
+    "btn-verify": "Verifiziere diesen Account",
+    "btn-not-you": "Nicht du? Logge dich in einen anderen Account ein.",
+    "btn-close": "Schließe dieses Fenster",
+    "btn-login": "Login mit Discord",
+    "btn-why": "Wieso muss ich mich verifizieren?",
+    "txt-verify-guild": "Verifiziere dich auf %guild%",
+    "txt-verified-guild": "Du wurdest auf %guild% verifiziert",
+    "txt-verify-guild-desc": "Verifizier dich selbst, um Zugang zu %guild% zu erhalten.",
+    "txt-not-logged-in": "Du bist noch nicht eingelogged.",
+    "login-wrong-guild": "Unbekannter Server",
+    "error-too-many-requests": "Du hast heute bereits mehrere Accounts mit dieser IP verifiziert.",
+    "error-vpn": "Du verwendest eine VPN-Verbindung. Bitte deaktiviere diese, um dich zu verifizieren.",
+    "error-proxy": "Du verwendest eine Proxy-Verbindung. Bitte deaktiviere diese, um dich zu verifizieren.",
+    "error-tor": "Du verwendest eine TOR-Verbindung. Bitte deaktiviere diese, um dich zu verifizieren."
+}

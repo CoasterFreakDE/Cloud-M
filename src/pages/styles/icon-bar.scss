@@ -1,0 +1,36 @@
+.icon-bar {
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ui-main-background);
+    border-radius: 30px;
+    width: 33%;
+    height: 8%;
+    transition: all 0.5s ease-in-out;
+    box-shadow: rgba($color: #000000, $alpha: 16%) 0px 3px 6px 1px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    z-index: 100000;
+}
+
+.icon-bar__item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.icon-bar__img:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    background: rgba($color: #A0AEC0, $alpha: 8%);
+}	
