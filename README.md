@@ -1,4 +1,4 @@
-
+![Img](./.github/images/Frontpage.png)
 
 # Cloud M
 
@@ -6,16 +6,25 @@ Cloud M is another cloud for storing your stuff in. It's a cloud that's not just
 Also you can run your python scripts right in the cloud.
 
 Features:
-- Store anything in the cloud
-- Run python scripts
-- Personalize your cloud
-- Animated backgrounds
-- Share your cloud
-- Watch your movies and videos right in the cloud toghter with your friends
-- Listen to your music right in the cloud toghter with your friends
-- Start your own webradio with your music
+- 📁 Store anything in the cloud
+- 🐍 Run python scripts
+- 💻 Personalize your cloud
+- 💃 Animated backgrounds
+- 🫂 Share your cloud
+- 🎦 Watch your movies and videos right in the cloud toghter with your friends
+- 🎶 Listen to your music right in the cloud toghter with your friends
+- 📻 Start your own webradio with your music
+
+<br />
+<br />
 
 
+---
+
+<br />
+<br />
+<br />
+<br />
 
 
 
