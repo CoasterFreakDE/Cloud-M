@@ -1,14 +1,14 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
 import './index.scss';
 import AppBase from './App';
 
 import './pages/styles/colors.scss'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <AppBase />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

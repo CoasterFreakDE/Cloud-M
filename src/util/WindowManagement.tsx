@@ -1,7 +1,7 @@
 import { CallbackFactory } from "./CallbackFactory";
 import { Properties } from "./Properties";
 import { WindowData } from "../model/WindowData";
-import FileWindow from "../pages/components/windows/FileWindow";
+import { FileWindow } from "../pages/components/windows/FileWindow";
 
 export class WindowManagement {
 

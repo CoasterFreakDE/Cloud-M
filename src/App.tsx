@@ -1,44 +1,45 @@
 import './App.scss';
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { CallbackFactory } from './util/CallbackFactory';
 import { LanguageSystem } from './util/LanguageSystem';
 
-import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import ToastFactory from './util/ToastFactory';
 import Dashboard from './pages/Dashboard';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { Login } from './pages/Login';
 
-type LangState = {
-  loaded: boolean
-}
-
-export default class AppBase extends React.Component<{}, LangState> {
+export default class AppBase extends React.Component<{}, {}> {
 
   componentDidMount() {
     this.setState({ loaded: false });
     CallbackFactory.getInstance().addCallback("languageLoaded", () => {
-      this.setState({ loaded: true });
+      
     })
     LanguageSystem.getInstance()
   }
 
   render() { 
-    const loaded = this.state?.loaded || false
       return (
         <div>
           {
-            loaded ? <>
+            <>
               <ToastFactory></ToastFactory>
-              <Dashboard />
-               </>
-              : <div className="fallbackContainer"><Loader
-              type="TailSpin"
-              color="#00BFFF"
-              height={100}
-              width={100}
-            /></div>
+              <Router>
+                <Switch>
+                  <Route exact path='/' component={Dashboard} />
+                  <div className="auth-wrapper">
+                    <div className="auth-inner">
+                    <Route path="/login" component={Login} />
+                    <Route path="/register" component={Dashboard} />
+                    </div>
+                 </div>
+                </Switch>
+              </Router>
+            </>
           }
         </div>
       );
