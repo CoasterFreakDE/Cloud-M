@@ -1,31 +1,65 @@
 
-export class User {
-    public id!: string;
-    public username!: string
-    public avatar!: string
-    public discriminator!: string
-    public public_flags!: number
-    public flags!: number
-    public locale!: string
-    public mfa_enabled!: boolean
-    public premium_type?: number
-    public isBooster: boolean = false
+export const BASE_URL = "http://devsky.one:25700";
+export const LOGIN_URL = `${BASE_URL}/login`;
+export const SETUP_URL = `${BASE_URL}/setup`;
+export const REGISTER_URL = `${BASE_URL}/register`;
+export const UPLOAD_URL = `${BASE_URL}/user/upload`;
+export const FILES_URL = `${BASE_URL}/user/files`;
+
+export class CloudUser {
+    public id!: number;
+    public name!: string;
+    public email!: string;
+    public passwordHash!: string;
+    public invitationalCode!: string;
 }
 
 export class Properties {
 
-    static UID = Properties.makeid()
-    static USER?: User
+    static USER?: CloudUser
 
-    private static makeid() {
-        const uid = localStorage.getItem('verify_auth');
-
-        if(uid) {
-            return uid
+    public static getLoginString() {
+        if(!Properties.USER) {
+            return ''
         }
 
-        return Properties.createRandomToken(16)
+        return Properties.USER.name + ':' + Properties.USER.passwordHash
     }
+
+    public static getLoginStringBase64() {
+        return btoa(Properties.getLoginString())
+    }
+
+   
+    public static async tryLogin(): Promise<Boolean> {
+        const loginstring = localStorage.getItem('clouddrive-login');
+        if(loginstring) {
+            return await this.login(loginstring);
+        }
+        return false;
+    }
+
+    public static async login(loginString: string): Promise<Boolean> {
+        try {
+            const answer = await fetch(LOGIN_URL, {
+                method: "POST",
+                headers: {
+                    "Authorization": `Basic ${loginString}`
+                }
+            })
+            const json = await answer.json()
+            const user = Object.assign(new CloudUser(), json);
+            console.log(user);
+            Properties.USER = user;
+            localStorage.setItem("clouddrive-login", loginString);
+            console.log("Logged in");
+            return true;
+        } catch(e) {
+            console.error(e);
+            return false;
+        }
+    }
+
 
     static createRandomToken(length: number) {
         var result           = [];

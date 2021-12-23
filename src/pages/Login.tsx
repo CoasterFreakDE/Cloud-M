@@ -1,10 +1,21 @@
+import { Properties } from "../util/Properties";
 import "./styles/login.scss"
 
 export function Login() {
 
-    const handleSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
+    const handleSubmit =  async (event: React.FormEvent<HTMLButtonElement>) => {
         event.preventDefault();
         
+        const username = (document.getElementById("username") as HTMLInputElement).value;
+        const password = (document.getElementById("password") as HTMLInputElement).value;
+
+        // post to server
+        
+        if(await Properties.login(btoa(`${username}:${password}`))) {
+            window.location.href = "/";
+        } else {
+            alert("Invalid username or password");
+        }
     }
 
     return (
@@ -14,12 +25,12 @@ export function Login() {
 
                 <div className="form-group">
                     <label>Email address or Username</label>
-                    <input type="text" className="form-control" placeholder="Enter email or username" />
+                    <input id={"username"} type="text" className="form-control" placeholder="Enter email or username" />
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
+                    <input id={"password"} type="password" className="form-control" placeholder="Enter password" />
                 </div>
 
                 <br></br>

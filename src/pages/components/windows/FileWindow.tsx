@@ -43,12 +43,16 @@ export function FileWindow() {
         }
       }, []);
 
+    const onLoad = useCallback(() => {
+        directory.loadFiles();
+    }, []);
+
 
     const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
 
     return (
-        <div>
+        <div onLoad={onLoad}>
             <h1>${directory.name}</h1>
             <button onClick={() => changeDirectory("..")}>..</button>
             {directories}

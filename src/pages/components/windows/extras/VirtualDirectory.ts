@@ -1,6 +1,6 @@
+import { Properties, UPLOAD_URL, FILES_URL } from "../../../../util/Properties";
+
 export const VIRTUAL_DIRECTORY_PATH = "./virtual-directory/";
-export const UPLOAD_URL = "http://localhost:7000/user/upload"; // "https://clouddrive.devsky.one/upload.php"; 
-export const DOWNLOAD_URL = "http://localhost:7000/user/files"; //https://clouddrive.devsky.one/files";
 
 export class VirtualDirectory {
 
@@ -22,14 +22,15 @@ export class VirtualDirectory {
     }
 
     public loadFiles() {
-        fetch(DOWNLOAD_URL + "?path=/" + this.path, {
+        fetch(FILES_URL + "?path=/" + this.path, {
+            method: "GET",
             headers: {
-                "Authorization": `Basic ${btoa("admin:admin")}`
+                "Authorization": `Basic ${Properties.getLoginStringBase64()}`
             }
         })
         .then(response => response.json())
         .then(data => {
-            
+
         }).catch(error => {
             console.log(error);
         });
@@ -61,7 +62,7 @@ export class VirtualFile {
             method: "POST",
             body: formData,
             headers: {
-                "Authorization": `Basic ${btoa("admin:admin")}`
+                "Authorization": `Basic ${Properties.getLoginStringBase64()}`
             }
         })
         .then(response => response.json())

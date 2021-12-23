@@ -8,9 +8,9 @@ import { LanguageSystem } from './util/LanguageSystem';
 
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import ToastFactory from './util/ToastFactory';
-import Dashboard from './pages/Dashboard';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Login } from './pages/Login';
+import { Dashboard } from './pages/Dashboard';
 
 export default class AppBase extends React.Component<{}, {}> {
 
